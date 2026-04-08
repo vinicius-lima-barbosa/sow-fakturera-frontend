@@ -1,21 +1,10 @@
-import { useEffect } from "react";
-import { AuthService } from "./services/auth.service";
+import { AuthProvider } from "./providers/auth.provider.jsx";
 
 function App() {
-  const { login } = new AuthService();
-
-  useEffect(() => {
-    const init = async () => {
-      await login("email@email.com", "senha123");
-    };
-
-    init();
-  }, [login]);
-
   return (
-    <div>
+    <AuthProvider>
       <h1>Hello World</h1>
-    </div>
+    </AuthProvider>
   );
 }
 
