@@ -1,9 +1,11 @@
+import { RouterProvider } from "react-router";
 import { AuthProvider } from "./providers/auth.provider.jsx";
+import { routes } from "./routes/index.jsx";
 
 function App() {
   return (
     <AuthProvider>
-      <h1>Hello World</h1>
+      <RouterProvider router={routes} />
     </AuthProvider>
   );
 }
