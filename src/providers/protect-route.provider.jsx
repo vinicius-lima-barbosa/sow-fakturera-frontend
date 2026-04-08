@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router";
+import { useNavigate } from "react-router";
 import useAuthStore from "../stores/auth.store";
 
 export function ProtectRouteProvider({ children }) {
@@ -7,7 +7,6 @@ export function ProtectRouteProvider({ children }) {
   const loading = useAuthStore((state) => state.loading);
 
   const navigate = useNavigate();
-  const location = useLocation();
   const [redirecting, setRedirecting] = useState(false);
 
   useEffect(() => {
@@ -23,7 +22,7 @@ export function ProtectRouteProvider({ children }) {
     if (!loading && authenticated) {
       navigate("teste", { replace: true });
     }
-  }, [authenticated, loading, navigate, location, redirecting]);
+  }, [authenticated, loading, navigate, redirecting]);
 
   if (loading) {
     return <div>Loading Page...</div>;
