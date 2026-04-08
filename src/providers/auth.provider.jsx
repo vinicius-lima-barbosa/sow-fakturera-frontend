@@ -22,5 +22,11 @@ export function AuthProvider({ children }) {
     init();
   }, [applySession, authenticated, clearSession]);
 
+  useEffect(() => {
+    if (window.location.pathname === "/") {
+      window.location.replace("/teste");
+    }
+  });
+
   return <>{children}</>;
 }
