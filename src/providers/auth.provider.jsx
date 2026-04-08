@@ -22,13 +22,5 @@ export function AuthProvider({ children }) {
     init();
   }, [applySession, authenticated, clearSession]);
 
-  useEffect(() => {
-    if (!authenticated) return;
-    if (typeof window === "undefined") return;
-    if (window.location.pathname !== "/") return;
-
-    window.location.replace("/pricelist");
-  }, [authenticated]);
-
   return <>{children}</>;
 }
