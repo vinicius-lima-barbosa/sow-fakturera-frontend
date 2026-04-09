@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router";
-import LoginPage from "../pages/login.page";
+import LoginPage from "../pages/login/login.page";
 import { MetadataProvider } from "../providers/metadata.provider";
 import { ProtectRouteProvider } from "../providers/protect-route.provider";
 
