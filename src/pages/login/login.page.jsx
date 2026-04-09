@@ -1,4 +1,5 @@
 import useMetadataStore from "../../stores/metadata.store";
+import "./login.style.css";
 
 function LoginPage() {
   const languages = useMetadataStore((state) => state.languages);
