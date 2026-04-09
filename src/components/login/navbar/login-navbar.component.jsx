@@ -68,15 +68,22 @@ function LoginNavbar() {
         <div class="navigation-options">
           {/* Pc normal navbar */}
           <div class="navigation-pc">
-            <span class="navigation-pc-items">home</span>
-            <span class="navigation-pc-items">order</span>
-            <span class="navigation-pc-items">our costumers</span>
-            <span class="navigation-pc-items">about us</span>
-            <span class="navigation-pc-items">contact us</span>
+            <span class="navigation-pc-items">Home</span>
+            <span class="navigation-pc-items">Order</span>
+            <span class="navigation-pc-items">Our Customers</span>
+            <span class="navigation-pc-items">About Us</span>
+            <span class="navigation-pc-items">Contact Us</span>
           </div>
 
           {/* Language selector */}
-          <div class="navigation-language-select"></div>
+          <div class="navigation-language-select">
+            <span class="navigation-pc-items">English</span>
+            <img
+              src="https://storage.123fakturere.no/public/flags/GB.png"
+              alt="flag"
+              class="navigation-language-flag"
+            />
+          </div>
         </div>
       </nav>
     </header>
