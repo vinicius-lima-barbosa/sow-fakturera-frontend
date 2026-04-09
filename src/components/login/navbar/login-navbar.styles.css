@@ -1,0 +1,119 @@
+/* Starting the Navbar */
+.header-container {
+  position: fixed;
+  inset-inline: 0;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  font-weight: 600;
+}
+
+.navigation-container {
+  width: 75%;
+  margin: auto;
+  padding-top: 2.5rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Navbar - Logo */
+.logo {
+  display: block;
+}
+
+#navigation-logo {
+  height: 2rem;
+  max-width: 100%;
+}
+
+/* Navbar hamburguer - All based in login page example */
+.hamburguer-container {
+  position: relative;
+}
+
+.navigation-hamburguer {
+  display: none;
+}
+
+.navigation-svg {
+  color: white;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  cursor: pointer;
+}
+
+.navigation-drop-down {
+  overflow: hidden;
+  top: 100%;
+  left: 0;
+  width: 19rem;
+  transition: height 0.3s ease;
+  background: white;
+  z-index: 20;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -4px rgba(0, 0, 0, 0.1);
+}
+
+.navigation-drop-down-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-item {
+  font-size: 15px;
+  font-weight: 600;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  display: block;
+  color: rgba(0, 0, 0, 0.9);
+  color: #000;
+  text-decoration: inherit;
+  height: 65px;
+}
+
+/* Navbar Options */
+.navigation-options {
+  display: flex;
+  align-items: center;
+}
+
+/* Navigation items in PC */
+.navigation-pc {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-right: 1rem;
+}
+
+.navigation-pc-items {
+  color: white;
+  font-weight: 600;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Responsiveness */
+@media (min-width: 1270px) {
+  .navigation-drop-down {
+    display: none;
+  }
+}
+
+@media (max-width: 1269px) {
+  .logo {
+    display: none;
+  }
+
+  .navigation-hamburguer {
+    display: block;
+  }
+
+  .navigation-pc {
+    display: none;
+  }
+}
