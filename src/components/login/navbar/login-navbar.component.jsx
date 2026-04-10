@@ -3,9 +3,14 @@ import "./login-navbar.styles.css";
 
 function LoginNavbar() {
   const [dropdownMenu, setDropdownMenu] = useState(false);
+  const [languageSelectorMenu, setLanguageSelectorMenu] = useState(false);
 
-  const openMenu = () => {
+  const openNavbarMenu = () => {
     setDropdownMenu(!dropdownMenu);
+  };
+
+  const openLanguageSelector = () => {
+    setLanguageSelectorMenu(!languageSelectorMenu);
   };
 
   return (
@@ -22,7 +27,7 @@ function LoginNavbar() {
 
         {/* Hambuguer Button */}
         <div class="hamburguer-container">
-          <div class="navigation-hamburguer" onClick={openMenu}>
+          <div class="navigation-hamburguer" onClick={openNavbarMenu}>
             <svg
               stroke="currentColor"
               fill="currentColor"
@@ -76,13 +81,49 @@ function LoginNavbar() {
           </div>
 
           {/* Language selector */}
-          <div class="navigation-language-select">
-            <span class="navigation-pc-items">English</span>
-            <img
-              src="https://storage.123fakturere.no/public/flags/GB.png"
-              alt="flag"
-              class="navigation-language-flag"
-            />
+          <div class="language-selector-container">
+            <div
+              class="navigation-language-select"
+              onClick={openLanguageSelector}
+            >
+              <span class="navigation-pc-items">English</span>
+              <img
+                src="https://storage.123fakturere.no/public/flags/GB.png"
+                alt="flag"
+                class="navigation-language-flag"
+              />
+            </div>
+
+            {/* Language Menu */}
+            <div
+              class="language-menu"
+              style={{
+                height: languageSelectorMenu ? "100px" : "0px",
+              }}
+            >
+              <div class="language-menu-items">
+                <div class="language-menu-item-container">
+                  <span class="language-menu-item">English</span>
+                  <div class="navigation-flag-container">
+                    <img
+                      src="https://storage.123fakturere.no/public/flags/GB.png"
+                      alt="flag"
+                      class="navigation-language-flag"
+                    />
+                  </div>
+                </div>
+                <div class="language-menu-item-container">
+                  <span class="language-menu-item">Swedish</span>
+                  <div class="navigation-flag-container">
+                    <img
+                      src="https://storage.123fakturere.no/public/flags/SE.png"
+                      alt="flag"
+                      class="navigation-language-flag"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </nav>
