@@ -1,6 +1,6 @@
 /* Starting the Navbar */
 .header-container {
-  position: fixed;
+  position: sticky;
   inset-inline: 0;
   top: 0;
   z-index: 10;
