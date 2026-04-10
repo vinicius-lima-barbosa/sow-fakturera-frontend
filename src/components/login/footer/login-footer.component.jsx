@@ -22,7 +22,7 @@ function LoginFooter({ metadata }) {
       </div>
 
       {/* Rights */}
-      <p class="footer-item">
+      <p class="footer-rights">
         {metadata.rights
           ? metadata.rights
           : "© Lättfaktura, CRO no. 638537, 2025. All rights reserved."}

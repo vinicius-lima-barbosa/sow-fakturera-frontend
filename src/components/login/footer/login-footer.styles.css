@@ -36,3 +36,27 @@
   display: flex;
   justify-content: center;
 }
+
+.footer-rights {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Responsiveness */
+@media (max-width: 1269px) {
+  .footer-up {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    margin-inline: 1.5rem;
+    font-size: 14px;
+  }
+
+  .footer-items {
+    gap: 1.2rem;
+  }
+}
