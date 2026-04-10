@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./login-navbar.styles.css";
 
-function LoginNavbar() {
+function LoginNavbar({ metadata, languages }) {
   const [dropdownMenu, setDropdownMenu] = useState(false);
   const [languageSelectorMenu, setLanguageSelectorMenu] = useState(false);
 
@@ -51,19 +51,21 @@ function LoginNavbar() {
           >
             <div class="navigation-drop-down-items">
               <a class="menu-item" href="">
-                home
+                {metadata.home ? metadata.home : "Home"}
               </a>
               <a class="menu-item" href="">
-                order
+                {metadata.order ? metadata.order : "Order"}
               </a>
               <a class="menu-item" href="">
-                our costumers
+                {metadata.ourCostumers
+                  ? metadata.ourCostumers
+                  : "Our Costumers"}
               </a>
               <a class="menu-item" href="">
-                about us
+                {metadata.aboutUs ? metadata.aboutUs : "About us"}
               </a>
               <a class="menu-item" href="">
-                contact us
+                {metadata.contactUs ? metadata.contactUs : "Contact us"}
               </a>
             </div>
           </div>
@@ -73,11 +75,21 @@ function LoginNavbar() {
         <div class="navigation-options">
           {/* Pc normal navbar */}
           <div class="navigation-pc">
-            <span class="navigation-pc-items">Home</span>
-            <span class="navigation-pc-items">Order</span>
-            <span class="navigation-pc-items">Our Customers</span>
-            <span class="navigation-pc-items">About Us</span>
-            <span class="navigation-pc-items">Contact Us</span>
+            <span class="navigation-pc-items">
+              {metadata.home ? metadata.home : "Home"}
+            </span>
+            <span class="navigation-pc-items">
+              {metadata.order ? metadata.order : "Order"}
+            </span>
+            <span class="navigation-pc-items">
+              {metadata.ourCostumers ? metadata.ourCostumers : "Our Costumers"}
+            </span>
+            <span class="navigation-pc-items">
+              {metadata.aboutUs ? metadata.aboutUs : "About us"}
+            </span>
+            <span class="navigation-pc-items">
+              {metadata.contactUs ? metadata.contactUs : "Contact us"}
+            </span>
           </div>
 
           {/* Language selector */}
@@ -86,9 +98,15 @@ function LoginNavbar() {
               class="navigation-language-select"
               onClick={openLanguageSelector}
             >
-              <span class="navigation-pc-items">English</span>
+              <span class="navigation-pc-items">
+                {metadata.language ? metadata.language : "English"}
+              </span>
               <img
-                src="https://storage.123fakturere.no/public/flags/GB.png"
+                src={
+                  metadata.iconUrl
+                    ? metadata.iconUrl
+                    : "https://storage.123fakturere.no/public/flags/GB.png"
+                }
                 alt="flag"
                 class="navigation-language-flag"
               />
@@ -102,26 +120,21 @@ function LoginNavbar() {
               }}
             >
               <div class="language-menu-items">
-                <div class="language-menu-item-container">
-                  <span class="language-menu-item">English</span>
-                  <div class="navigation-flag-container">
-                    <img
-                      src="https://storage.123fakturere.no/public/flags/GB.png"
-                      alt="flag"
-                      class="navigation-language-flag"
-                    />
-                  </div>
-                </div>
-                <div class="language-menu-item-container">
-                  <span class="language-menu-item">Swedish</span>
-                  <div class="navigation-flag-container">
-                    <img
-                      src="https://storage.123fakturere.no/public/flags/SE.png"
-                      alt="flag"
-                      class="navigation-language-flag"
-                    />
-                  </div>
-                </div>
+                {languages &&
+                  languages.map((l) => {
+                    return (
+                      <div class="language-menu-item-container">
+                        <span class="language-menu-item">{l.language}</span>
+                        <div class="navigation-flag-container">
+                          <img
+                            src={l.iconUrl}
+                            alt="flag"
+                            class="navigation-language-flag"
+                          />
+                        </div>
+                      </div>
+                    );
+                  })}
               </div>
             </div>
           </div>

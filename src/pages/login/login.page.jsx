@@ -5,7 +5,6 @@ import "./login.style.css";
 function LoginPage() {
   const languages = useMetadataStore((state) => state.languages);
   const currentLanguage = useMetadataStore((state) => state.currentLanguage);
-  console.log(languages, currentLanguage);
 
   return (
     <main class="login-container">
@@ -17,7 +16,7 @@ function LoginPage() {
         />
       </div>
 
-      <LoginNavbar />
+      <LoginNavbar metadata={currentLanguage} languages={languages} />
 
       <section class="main-content">
         {/* Login Form */}
