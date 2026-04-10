@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./login-navbar.styles.css";
 
-function LoginNavbar({ metadata, languages }) {
+function LoginNavbar({ metadata, languages, onChangeLanguage }) {
   const [dropdownMenu, setDropdownMenu] = useState(false);
   const [languageSelectorMenu, setLanguageSelectorMenu] = useState(false);
 
@@ -123,7 +123,10 @@ function LoginNavbar({ metadata, languages }) {
                 {languages &&
                   languages.map((l) => {
                     return (
-                      <div class="language-menu-item-container">
+                      <div
+                        class="language-menu-item-container"
+                        onClick={() => onChangeLanguage(l)}
+                      >
                         <span class="language-menu-item">{l.language}</span>
                         <div class="navigation-flag-container">
                           <img

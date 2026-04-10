@@ -6,7 +6,7 @@ const useMetadataStore = create((set) => ({
   currentLanguage: {},
   loading: false,
 
-  setCurrentLanguage: ({ language }) => {
+  setCurrentLanguage: (language) => {
     set({
       currentLanguage: language,
     });
