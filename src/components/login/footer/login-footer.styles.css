@@ -1,0 +1,38 @@
+/* footer main container */
+.footer-container {
+  position: relative;
+  margin-top: auto;
+  margin-bottom: 1.2rem;
+  margin-inline: 6rem;
+  font-weight: 400;
+  font-size: 18px;
+  color: white;
+}
+
+/* title and options */
+.footer-up {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid white;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  padding-inline: 16px;
+}
+
+.footer-title {
+  font-weight: 400;
+  font-size: xx-large;
+}
+
+.footer-items {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* The footer items including rights */
+.footer-item {
+  display: flex;
+  justify-content: center;
+}

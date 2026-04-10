@@ -1,3 +1,4 @@
+import LoginFooter from "../../components/login/footer/login-footer.component";
 import LoginNavbar from "../../components/login/navbar/login-navbar.component";
 import useMetadataStore from "../../stores/metadata.store";
 import "./login.style.css";
@@ -38,13 +39,7 @@ function LoginPage() {
         <div></div>
       </section>
 
-      <footer class="footer-container">
-        {/* Up Part (Title and options) */}
-        <div></div>
-
-        {/* Rights */}
-        <div></div>
-      </footer>
+      <LoginFooter metadata={currentLanguage} />
     </main>
   );
 }
