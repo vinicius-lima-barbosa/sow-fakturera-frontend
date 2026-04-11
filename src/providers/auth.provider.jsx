@@ -5,7 +5,6 @@ import useAuthStore from "../stores/auth.store";
 export function AuthProvider({ children }) {
   const applySession = useAuthStore((state) => state.applySession);
   const clearSession = useAuthStore((state) => state.clearSession);
-  const authenticated = useAuthStore((state) => state.authenticated);
 
   useEffect(() => {
     const init = async () => {
@@ -19,13 +18,13 @@ export function AuthProvider({ children }) {
     };
 
     init();
-  }, [applySession, authenticated, clearSession]);
+  }, [applySession, clearSession]);
 
   useEffect(() => {
     if (window.location.pathname === "/") {
       window.location.replace("/pricelist");
     }
-  });
+  }, []);
 
   return <>{children}</>;
 }

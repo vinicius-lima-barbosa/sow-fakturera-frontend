@@ -4,11 +4,11 @@ import { AuthService } from "../services/auth.service";
 const useAuthStore = create((set, get) => ({
   user: null,
   authenticated: false,
-  loading: false,
+  loading: true,
 
-  applySession: ({ usuario }) => {
+  applySession: ({ user }) => {
     set({
-      usuario,
+      user,
       authenticated: true,
       loading: false,
     });
@@ -16,7 +16,7 @@ const useAuthStore = create((set, get) => ({
 
   clearSession: () => {
     set({
-      usuario: null,
+      user: null,
       authenticated: false,
       loading: false,
     });
