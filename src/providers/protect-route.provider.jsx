@@ -20,7 +20,7 @@ export function ProtectRouteProvider({ children }) {
     }
 
     if (!loading && authenticated) {
-      navigate("teste", { replace: true });
+      navigate("pricelist", { replace: true });
     }
   }, [authenticated, loading, navigate, redirecting]);
 

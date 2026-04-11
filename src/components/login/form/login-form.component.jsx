@@ -31,7 +31,7 @@ function LoginForm({ metadata }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await login(email, password);
-    navigate("/teste");
+    navigate("/pricelist");
   };
 
   return (

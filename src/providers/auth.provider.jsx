@@ -23,7 +23,7 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     if (window.location.pathname === "/") {
-      window.location.replace("/teste");
+      window.location.replace("/pricelist");
     }
   });
 
