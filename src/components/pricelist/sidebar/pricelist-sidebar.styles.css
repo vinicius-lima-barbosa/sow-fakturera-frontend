@@ -1,7 +1,7 @@
 .pricelist-sidebar {
   display: flex;
   flex-direction: column;
-  width: 20rem;
+  min-width: 20rem;
   border-right: 1px solid rgb(230, 228, 228);
   align-items: center;
   padding-block: 1rem;
@@ -35,4 +35,11 @@
 
 .sidebar-item:hover {
   background-color: rgb(243, 242, 242);
+}
+
+/* Responsiveness */
+@media (max-width: 1269px) {
+  .pricelist-sidebar {
+    display: none;
+  }
 }
