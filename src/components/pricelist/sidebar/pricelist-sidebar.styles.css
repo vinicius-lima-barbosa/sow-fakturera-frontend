@@ -1,0 +1,38 @@
+.pricelist-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 20rem;
+  border-right: 1px solid rgb(230, 228, 228);
+  align-items: center;
+  padding-block: 1rem;
+}
+
+.sidebar-menu {
+  font-size: 22px;
+  font-weight: 400;
+  text-align: center;
+  width: 80%;
+  padding-bottom: 0.8rem;
+  margin-bottom: 0.8rem;
+  border-bottom: 2px solid rgb(95, 95, 171);
+}
+
+.sidebar-items {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 22px;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 2rem;
+}
+
+.sidebar-item:hover {
+  background-color: rgb(243, 242, 242);
+}

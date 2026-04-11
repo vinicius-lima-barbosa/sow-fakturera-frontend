@@ -1,7 +1,11 @@
 .pricelist-main-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   min-height: 100vh;
   min-width: 100vw;
+}
+
+.main-layout {
+  display: flex;
+  flex: 1;
 }
