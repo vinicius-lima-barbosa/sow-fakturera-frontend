@@ -1,10 +1,11 @@
 import PricelistHeader from "../../components/pricelist/header/pricelist-header.component";
+import Pricelist from "../../components/pricelist/pricelist/pricelist.component";
 import PricelistSidebar from "../../components/pricelist/sidebar/pricelist-sidebar.component";
 import "./pricelist.styles.css";
 
 function PriceListPage() {
   return (
-    <main className="pricelist-main-container">
+    <main className="pricelist-page-container">
       {/* pricelist header */}
       <PricelistHeader />
 
@@ -14,7 +15,7 @@ function PriceListPage() {
         <PricelistSidebar />
 
         {/* main content */}
-        <main></main>
+        <Pricelist />
       </div>
     </main>
   );
