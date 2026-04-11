@@ -2,7 +2,7 @@ import PricelistHeader from "../../components/pricelist/header/pricelist-header.
 import PricelistSidebar from "../../components/pricelist/sidebar/pricelist-sidebar.component";
 import "./pricelist.styles.css";
 
-function PriceList() {
+function PriceListPage() {
   return (
     <main className="pricelist-main-container">
       {/* pricelist header */}
@@ -20,4 +20,4 @@ function PriceList() {
   );
 }
 
-export default PriceList;
+export default PriceListPage;
