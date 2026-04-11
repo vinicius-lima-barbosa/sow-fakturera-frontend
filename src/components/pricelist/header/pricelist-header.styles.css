@@ -1,0 +1,85 @@
+.pricelist-header-container {
+  position: sticky;
+  inset-inline: 0;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  font-weight: 600;
+  background: rgb(33, 110, 199);
+}
+
+.pricelist-header {
+  width: 75%;
+  padding: 1.2rem;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+
+.header-hamburguer {
+  display: none;
+  cursor: pointer;
+}
+
+.user-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-avatar {
+  border: 1px solid white;
+  border-radius: 50%;
+  padding-block: 0.5rem;
+  padding-inline: 0.7rem;
+}
+
+.user-data-container {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  font-weight: 400;
+}
+
+.user-name {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.user-something {
+  font-size: 14px;
+}
+
+.header-svg {
+  flex-shrink: 0;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+}
+
+.pricelist-language-container {
+  display: flex;
+  align-items: center;
+}
+
+.pricelist-data-flag {
+  height: 1.2rem;
+  max-width: 100%;
+  margin-left: 1rem;
+  border-radius: 6px;
+}
+
+/* Responsiveness */
+@media (max-width: 1269px) {
+  .user-avatar,
+  .user-data-container {
+    display: none;
+  }
+
+  .header-hamburguer {
+    display: block;
+    margin-top: 0.3rem;
+  }
+}

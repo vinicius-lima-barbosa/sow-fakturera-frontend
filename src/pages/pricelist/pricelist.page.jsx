@@ -1,8 +1,18 @@
+import PricelistHeader from "../../components/pricelist/header/pricelist-header.component";
+import "./pricelist.styles.css";
+
 function PriceList() {
   return (
-    <div>
-      <h1>PriceList</h1>
-    </div>
+    <main className="pricelist-main-container">
+      {/* pricelist header */}
+      <PricelistHeader />
+
+      {/* pricelist sidebar */}
+      <aside></aside>
+
+      {/* main content */}
+      <main></main>
+    </main>
   );
 }
 
