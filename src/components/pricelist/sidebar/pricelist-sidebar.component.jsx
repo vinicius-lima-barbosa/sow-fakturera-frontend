@@ -40,7 +40,7 @@ function PricelistSidebar() {
       <h2 className="sidebar-menu">Menu</h2>
       <div className="sidebar-items">
         {SIDEBAR_ITEMS.map((item) => (
-          <div className="sidebar-item" onClick={item.action}>
+          <div key={item.label} className="sidebar-item" onClick={item.action}>
             <span
               className="sidebar-icon"
               style={{
