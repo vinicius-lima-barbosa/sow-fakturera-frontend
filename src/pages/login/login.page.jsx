@@ -5,9 +5,9 @@ import useMetadataStore from "../../stores/metadata.store";
 import "./login.style.css";
 
 function LoginPage() {
+  const { setCurrentLanguage } = useMetadataStore();
   const languages = useMetadataStore((state) => state.languages);
   const currentLanguage = useMetadataStore((state) => state.currentLanguage);
-  const { setCurrentLanguage } = useMetadataStore();
 
   const onChangeCurrentLanguage = (language) => {
     setCurrentLanguage(language);

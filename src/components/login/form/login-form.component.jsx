@@ -1,11 +1,37 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
+import useAuthStore from "../../../stores/auth.store";
 import "./login-form.component.css";
 
 function LoginForm({ metadata }) {
+  const { login } = useAuthStore();
+
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const [showEmailError, setShowEmailError] = useState("");
+  const [showPasswordError, setShowPasswordError] = useState("");
+
   const [showPassword, setShowPassword] = useState(false);
 
   const changeShowPassword = () => {
     setShowPassword(!showPassword);
+  };
+
+  const changeShowEmailError = () => {
+    setShowEmailError(email.trim() === "" && true);
+  };
+
+  const changeShowPasswordError = () => {
+    setShowPasswordError(password.trim() === "" && true);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await login(email, password);
+    navigate("/teste");
   };
 
   return (
@@ -17,7 +43,7 @@ function LoginForm({ metadata }) {
         </h1>
 
         {/* Login Form */}
-        <form action="" className="login-form-container">
+        <form onSubmit={handleSubmit} className="login-form-container">
           <div className="login-field-container">
             <label htmlFor="" className="login-form-label">
               {metadata.emailLabel
@@ -27,16 +53,21 @@ function LoginForm({ metadata }) {
             <input
               type="text"
               className="login-form-input"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               required
+              onBlur={() => changeShowEmailError()}
               placeholder={
                 metadata.emailField ? metadata.emailField : "Email address"
               }
             />
-            <span className="error-span">
-              {metadata.emailRequired
-                ? metadata.emailRequired
-                : "Please enter a valid email address"}
-            </span>
+            {showEmailError && (
+              <span className="error-span">
+                {metadata.emailRequired
+                  ? metadata.emailRequired
+                  : "Please enter a valid email address"}
+              </span>
+            )}
           </div>
           <div className="login-field-container">
             <label htmlFor="" className="login-form-label">
@@ -48,7 +79,10 @@ function LoginForm({ metadata }) {
               <input
                 type={showPassword ? "text" : "password"}
                 className="login-form-input"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 required
+                onBlur={() => changeShowPasswordError()}
                 placeholder={
                   metadata.passwordField ? metadata.passwordField : "Password"
                 }
@@ -60,15 +94,17 @@ function LoginForm({ metadata }) {
                 onClick={changeShowPassword}
               />
             </div>
-            <span className="error-span">
-              {metadata.passwordRequired
-                ? metadata.passwordRequired
-                : "This field cannot be empty"}
-            </span>
+            {showPasswordError && (
+              <span className="error-span">
+                {metadata.passwordRequired
+                  ? metadata.passwordRequired
+                  : "This field cannot be empty"}
+              </span>
+            )}
           </div>
 
           {/* Login Button */}
-          <button className="login-button">
+          <button type="submit" className="login-button">
             {metadata.loginButton ? metadata.loginButton : "Log in"}
           </button>
         </form>
