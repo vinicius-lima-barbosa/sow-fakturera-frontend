@@ -1,0 +1,181 @@
+.form-main-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+}
+
+.login-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-radius: 40px;
+  margin: 0 auto;
+  transition: width 600ms ease-in-out;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  font-weight: 500;
+  width: 660px;
+}
+
+.login-title {
+  color: #ff0000;
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: 700;
+  padding: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 75%;
+}
+
+.login-field-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.login-form-input {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 3rem;
+  border: 1px solid #ccc;
+  border-radius: 2rem;
+  height: 3.5rem;
+  margin-top: 3px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #191919;
+  outline: none;
+}
+
+.login-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+#show-password-img {
+  position: absolute;
+  right: 1rem;
+  height: 40%;
+  cursor: pointer;
+}
+
+.error-span {
+  color: red;
+  margin-top: 0.3rem;
+  font-weight: 400;
+}
+
+.login-button {
+  padding-left: 5rem;
+  padding-right: 5rem;
+  color: white;
+  padding-top: 1rem;
+  transition: background-color 500ms ease-in-out;
+  padding-bottom: 1rem;
+  background-color: #07a31f;
+  text-transform: none;
+  font: inherit;
+  cursor: pointer;
+  border-radius: 40px;
+  border: none;
+  font-weight: 500;
+  width: 35vw;
+  min-width: max-content;
+  max-width: 270px;
+}
+
+.links-container {
+  margin: auto;
+  margin-top: auto;
+  justify-self: center;
+  width: 300px;
+  text-align: center;
+  margin-top: 1.25rem;
+  font-weight: 400;
+  color: #191919;
+  display: flex;
+  justify-content: space-around;
+}
+
+.link-item {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/* Get all this from the login page example */
+@media (min-width: 1910px) and (max-width: 2549px) and (orientation: landscape) {
+  .login-title {
+    font-size: 46px;
+  }
+
+  .links-container {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1270px) and (max-width: 1389px) and (orientation: landscape) {
+  .login-card {
+    margin-top: max(40px, calc(50svh - 196px - 69px));
+    padding-top: 1.5rem;
+    width: 520px;
+    padding-bottom: 2.5rem;
+    margin-bottom: max(40px, calc(50svh - 196px));
+  }
+}
+
+/* literally get this from dev tools in login page example and adapted to my code */
+@media (max-width: 674px) {
+  html,
+  body {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    padding-bottom: 0px !important;
+  }
+
+  main {
+    width: 100%;
+    display: flex;
+    height: inherit;
+    flex: 1;
+  }
+
+  .form-main-content {
+    width: 100%;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+  }
+
+  .form-main-content {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 10px;
+    margin: 0px;
+    margin-top: 20px;
+    flex: 1;
+    position: relative;
+    font-size: 16px;
+  }
+
+  .login-card {
+    margin: 0px;
+    max-width: 100%;
+    width: 100%;
+  }
+}

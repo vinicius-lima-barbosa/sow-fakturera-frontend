@@ -1,4 +1,5 @@
 import LoginFooter from "../../components/login/footer/login-footer.component";
+import LoginForm from "../../components/login/form/login-form.component";
 import LoginNavbar from "../../components/login/navbar/login-navbar.component";
 import useMetadataStore from "../../stores/metadata.store";
 import "./login.style.css";
@@ -27,6 +28,7 @@ function LoginPage() {
         languages={languages}
         onChangeLanguage={onChangeCurrentLanguage}
       />
+      <LoginForm metadata={currentLanguage} />
       <LoginFooter metadata={currentLanguage} />
     </main>
   );
