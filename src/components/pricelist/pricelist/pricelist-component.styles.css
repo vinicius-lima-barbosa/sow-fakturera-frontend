@@ -1,0 +1,92 @@
+.pricelist-main-container {
+  min-height: none;
+  width: 100%;
+  padding-block: 2rem;
+  padding-inline: 4rem;
+}
+
+.searchs-buttons-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.search-container-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.search-input-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
+
+.search-input {
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 3rem;
+  border: 1px solid #ccc;
+  border-radius: 2rem;
+  height: 2.5rem;
+  margin-top: 3px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #191919;
+  outline: none;
+}
+
+.search-icon {
+  position: absolute;
+  right: 1rem;
+  font-size: 22px;
+  height: 50%;
+  color: rgb(25, 169, 191);
+  cursor: pointer;
+}
+
+.buttons-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.button-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-block: 1.2rem;
+  padding-inline: 2.2rem;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 2rem;
+  height: 2.5rem;
+  font-size: 18px;
+  font-weight: 500;
+  text-wrap: nowrap;
+  color: #191919;
+  cursor: pointer;
+}
+
+.button-item:hover {
+  background-color: #f6f6f6;
+}
+
+.button-icon {
+  margin-top: 0.2rem;
+  font-size: 1.5rem;
+}
+
+.products-container {
+  margin-top: 3rem;
+}
+
+.products-table {
+  width: 100%;
+}
+
+.table-head {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
