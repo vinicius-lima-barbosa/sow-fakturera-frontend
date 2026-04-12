@@ -28,11 +28,11 @@ function Pricelist() {
   const COLUMNS = [
     { key: "articleNumber", label: "Article No.", width: "8rem" },
     { key: "name", label: "Product/Service", width: "auto" },
-    { key: "inPrice", label: "In Price", width: "7rem" },
-    { key: "price", label: "Price", width: "7rem" },
-    { key: "unit", label: "Unit", width: "7rem" },
-    { key: "inStock", label: "In Stock", width: "7rem" },
-    { key: "description", label: "Description" },
+    { key: "inPrice", label: "In Price", width: "7rem", hide: "768px" },
+    { key: "price", label: "Price", width: "7rem", hide: "768px" },
+    { key: "unit", label: "Unit", width: "7rem", hide: "768px" },
+    { key: "inStock", label: "In Stock", width: "7rem", hide: "1269px" },
+    { key: "description", label: "Description", hide: "1269px" },
   ];
 
   return (
@@ -105,7 +105,7 @@ function Pricelist() {
                 return (
                   <td
                     key={column.label}
-                    className="table-head-item"
+                    className={`table-head-item ${column.hide ? `hide-${column.hide}` : ""}`}
                     style={{
                       width: column.width,
                     }}
@@ -125,7 +125,10 @@ function Pricelist() {
               products.map((product) => (
                 <tr key={product.articleNumber} className="product-row">
                   {COLUMNS.map((column) => (
-                    <td key={column.key} className="product-row-item">
+                    <td
+                      key={column.key}
+                      className={`table-data-item ${column.hide ? `hide-${column.hide}` : ""}`}
+                    >
                       <input
                         value={product[column.key] ?? ""}
                         onChange={(e) =>

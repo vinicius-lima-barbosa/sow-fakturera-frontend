@@ -5,6 +5,11 @@
   font-family: "Open Sans", sans-serif !important;
 }
 
+#root {
+  width: 100%;
+  min-height: 100%;
+}
+
 /* Get this root style from the next.js app of my work */
 :root {
   --radius: 0.625rem;
