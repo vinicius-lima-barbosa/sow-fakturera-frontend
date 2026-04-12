@@ -5,6 +5,8 @@ const useProductStore = create((set) => ({
   products: [],
   loading: false,
 
+  setProducts: (products) => set({ products }),
+
   getProducts: async () => {
     const Service = new ProductsService();
     try {
@@ -26,11 +28,13 @@ const useProductStore = create((set) => ({
     const Service = new ProductsService();
     try {
       set({ loading: true });
-      const products = await Service.update(id, data);
+      await Service.update(id, data);
 
-      set({
-        products: products.map((p) => (p.id === id ? { ...p, ...data } : p)),
-      });
+      set((state) => ({
+        products: state.products.map((p) =>
+          p.id === id ? { ...p, ...data } : p,
+        ),
+      }));
     } catch (error) {
       set({ products: [] });
       throw error;
