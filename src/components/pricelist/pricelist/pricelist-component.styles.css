@@ -86,7 +86,24 @@
   width: 100%;
 }
 
-.table-head {
+.table-head-item {
   font-size: 1.2rem;
   font-weight: 400;
+}
+
+.table-input {
+  width: 100%;
+  font-size: 1.1rem;
+  color: #272727;
+  border: none;
+  outline: none;
+  border: 2px solid rgb(130, 205, 209);
+  border-radius: 1.1rem;
+  background: rgb(255, 255, 255);
+  padding-inline: 0.6rem;
+  padding-block: 0.3rem;
+}
+
+table {
+  border-spacing: 1rem;
 }

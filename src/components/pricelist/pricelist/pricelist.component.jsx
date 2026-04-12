@@ -2,11 +2,12 @@ import { useEffect } from "react";
 import { BiPrinter, BiSearch } from "react-icons/bi";
 import { IoIosAddCircle } from "react-icons/io";
 import useProductStore from "../../../stores/products.store";
+import { transformProduct } from "../../../utils/transform-products.util";
 import "./pricelist-component.styles.css";
 
 function Pricelist() {
   const products = useProductStore((state) => state.products);
-  const { getProducts } = useProductStore();
+  const { getProducts, setProducts, updateProduct } = useProductStore();
 
   useEffect(() => {
     const init = async () => {
@@ -16,13 +17,21 @@ function Pricelist() {
     init();
   }, [getProducts]);
 
+  const handleChange = (id, key, value) => {
+    const updated = products.map((p) =>
+      p.id === id ? { ...p, [key]: value } : p,
+    );
+
+    setProducts(updated);
+  };
+
   const COLUMNS = [
-    { key: "articleNumber", label: "Article No." },
-    { key: "name", label: "Product/Service" },
-    { key: "inPrice", label: "In Price" },
-    { key: "price", label: "Price" },
-    { key: "unit", label: "Unit" },
-    { key: "inStock", label: "In Stock" },
+    { key: "articleNumber", label: "Article No.", width: "8rem" },
+    { key: "name", label: "Product/Service", width: "auto" },
+    { key: "inPrice", label: "In Price", width: "7rem" },
+    { key: "price", label: "Price", width: "7rem" },
+    { key: "unit", label: "Unit", width: "7rem" },
+    { key: "inStock", label: "In Stock", width: "7rem" },
     { key: "description", label: "Description" },
   ];
 
@@ -90,11 +99,17 @@ function Pricelist() {
       {/* The pricelist itself */}
       <div className="products-container">
         <table className="products-table">
-          <thead>
+          <thead className="table-head-container">
             <tr>
               {COLUMNS.map((column) => {
                 return (
-                  <td key={column.label} className="table-head">
+                  <td
+                    key={column.label}
+                    className="table-head-item"
+                    style={{
+                      width: column.width,
+                    }}
+                  >
                     {column.label}
                   </td>
                 );
@@ -110,7 +125,23 @@ function Pricelist() {
               products.map((product) => (
                 <tr key={product.articleNumber} className="product-row">
                   {COLUMNS.map((column) => (
-                    <td key={column.key}>{product[column.key]}</td>
+                    <td key={column.key} className="product-row-item">
+                      <input
+                        value={product[column.key] ?? ""}
+                        onChange={(e) =>
+                          handleChange(product.id, column.key, e.target.value)
+                        }
+                        onKeyDown={(e) => {
+                          if (e.key === "Enter") {
+                            updateProduct(
+                              product.id,
+                              transformProduct(product),
+                            );
+                          }
+                        }}
+                        className="table-input"
+                      />
+                    </td>
                   ))}
                 </tr>
               ))
