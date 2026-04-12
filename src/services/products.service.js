@@ -7,8 +7,8 @@ export class ProductsService {
   };
 
   update = async (id, data) => {
-    const response = await api.patch(`/product/${id}`, {
-      data,
+    const response = await api.patch(`/products/${id}`, {
+      ...data,
     });
     return response.data.data;
   };
